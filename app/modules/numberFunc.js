@@ -50,7 +50,7 @@ function addNumberEvents(array, fields) {
         if (selectedField && /[1-9]/.test(event.key)) {
             selectedField.innerHTML = event.key;
             if (mistake(selectedField,fields,array)){
-                alert("mistake")
+                // This is where mistake display function should go
             } else{
                 selectedField.classList.add("flagged");
                 selectedField = "";
@@ -65,7 +65,7 @@ function addNumberEvents(array, fields) {
             if (selectedField) {
                 selectedField.innerHTML = `${i + 1}`;
                 if (mistake(selectedField,fields,array)){
-                    alert("mistake")
+                    // This is where mistake display function should go
                 } else{
                     selectedField.classList.add("flagged");
                     selectedField = "";
