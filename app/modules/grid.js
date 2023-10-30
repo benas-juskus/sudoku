@@ -4,7 +4,7 @@ function grid() {
         grid_square += `<div class="square" id="sq-${k}">`;
         for(let l = 1; l < 10; l++){
             grid_square += `<div class="field">`
-            grid_square += `<span class="num">1</span>`
+            grid_square += `<span class="num"></span>`
             grid_square += `</div>`
         }
         grid_square += `</div>`;
