@@ -1,5 +1,5 @@
 import {grid, numPad, activeFieldCheck} from "./modules/grid.js";
-import * as numberFunc from "./modules/numberFunc.js";
+import {newGame} from "./modules/numberFunc.js";
 
 const fields = document.getElementsByClassName("field");
 document.getElementById("game-grid").innerHTML = grid();
@@ -19,6 +19,9 @@ for (let i = 1; i<=9; i++){
         arr.push(i)
     }
 }
-numberFunc.fillTable(arr,fields);
-numberFunc.addNumberEvents(fields)
-numberFunc.hideFields(fields,0)
+
+newGame(arr,fields,0);
+
+//New Game Button Event
+const newGameButton = document.getElementsByClassName("new-game")[0];
+newGameButton.addEventListener("click", ()=>newGame(arr,fields,0));

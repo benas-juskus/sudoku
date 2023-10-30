@@ -27,6 +27,7 @@ function hideFields(fields, difficulty) {
             } else if (random < 0.05 && e.innerHTML !== "") {
                 e.innerHTML = "";
                 hiddenCount--;
+                e.remove
             }
             random = Math.random();
         }
@@ -36,14 +37,17 @@ function hideFields(fields, difficulty) {
 function addNumberEvents(fields) {
     for (let e of fields) {
         e.addEventListener("click", function () {
-            selectedField = e;
+            if (e.innerHTML == ""){
+            selectedField = e;}
         });
     }
+    // Keyboard events
     document.addEventListener("keydown", (event) => {
         if (selectedField && /[1-9]/.test(event.key)) {
             selectedField.innerHTML = event.key;
         }
     });
+    // Numpad Events
     const numPad = document.getElementsByClassName("num-pad-item");
     let index = 1;
     for (let i = 0; i < numPad.length; i++){
@@ -54,6 +58,15 @@ function addNumberEvents(fields) {
         })
     }
 }
-let selectedField = {};
+function mistake(userNum,storedNum){
 
-export {addNumberEvents, fillTable, hideFields}
+}
+// Regenerates table
+function newGame(array,fields,difficulty){
+    fillTable(array,fields);
+    hideFields(fields,difficulty);
+    addNumberEvents(fields);
+}
+
+let selectedField = {};
+export {addNumberEvents, fillTable, hideFields, newGame}
