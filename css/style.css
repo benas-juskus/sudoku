@@ -16,22 +16,32 @@
     width: 360px;
     height: 360px;
     margin: 20px 0 0 20px;
-    border: 1px solid var(--dark);
+    border-right: 2px solid var(--dark);
+    border-bottom: 2px solid var(--dark);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     cursor:pointer;
 }
 .square {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid  var(--dark);
+    grid-template-rows: repeat(3, 1fr);
+    border-top: 2px solid  var(--dark);
+    border-left: 2px solid var(--dark);
 }
 .field {
-    border-bottom: 1px solid  var(--dark);
-    border-left: 1px solid  var(--dark);
+    border-left: 1px solid  #b8bdc1;
+    color: var(--dark);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;justify-content: center;    
 }
-.field:nth-child(3n) {
-    border-right: 1px solid  var(--dark);
+.field:nth-child(1),.field:nth-child(4),.field:nth-child(7) {
+    border-left: none;
+}
+.field:nth-child(-n+6) {
+    border-bottom: 1px solid  #b8bdc1;
 }
 .side-controls {
     margin-top: 20px;
@@ -75,13 +85,10 @@
 .new-game:hover {
     background-color: #a3bbd9;
 }
-.control-pad {
-    
+.control-pad {    
     display: grid;
     grid-auto-flow: column;
-    gap: 0.3rem;
-
-    
+    gap: 0.3rem;    
 }
 .control-item {
     height: 55px;
