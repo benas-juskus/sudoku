@@ -24,4 +24,4 @@ newGame(arr,fields,0);
 
 //New Game Button Event
 const newGameButton = document.getElementsByClassName("new-game")[0];
-newGameButton.addEventListener("click", ()=>newGame(arr,fields,0));
+newGameButton.addEventListener("click", ()=>newGame(arr,fields,3));

@@ -36,9 +36,9 @@ function hideFields(fields, difficulty) {
 /* Click & keyboard events.*/
 function addNumberEvents(array, fields) {
     for (let e of fields) {
-        e.classList.remove("flagged");
+        e.classList.remove("completed");
         e.addEventListener("click", function () {
-            if (e.classList.contains("mistake") || e.innerHTML == "" && !e.classList.contains("flagged")) {
+            if (e.classList.contains("mistake") || (e.innerHTML == "" && !e.classList.contains("completed"))) {
                 selectedField = e;
             } else {
                 selectedField = "";
@@ -53,7 +53,8 @@ function addNumberEvents(array, fields) {
                 selectedField.classList.add("mistake");
                 // This is where mistake display function should go
             } else{
-                selectedField.classList.add("flagged");
+                selectedField.classList.add("completed");
+                selectedField.classList.remove("mistake");
                 selectedField = "";
             }
         }
@@ -69,7 +70,8 @@ function addNumberEvents(array, fields) {
                     selectedField.classList.add("mistake");
                     // This is where mistake display function should go
                 } else{
-                    selectedField.classList.add("flagged");
+                    selectedField.classList.add("completed");
+                    selectedField.classList.remove("mistake");
                     selectedField = "";
                 }
             }
