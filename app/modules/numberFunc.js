@@ -66,7 +66,7 @@ function addNumberEvents(array, fields) {
             }
         });
     }
-    menuEvents(array,fields,document.getElementsByClassName("dificulty_level"));
+    menuEvents(array,sortFields(fields),document.getElementsByClassName("dificulty_level"));
 }
     // Event listeners for difficulty buttons & start
 let difficulty = 0; // Remember which difficulty was selected.

@@ -9,7 +9,7 @@ generateTable.markActive();// marks clicked field
 generateTable.startGame(); 
 generateTable.cancelStartGame();// closes start new game panel
 //example arr
-let arr = [];
+let array = [];
 for (let i=1; i<=9; i++){
     for (let i = 1; i<=9; i++){
         arr.push(i);
@@ -17,4 +17,7 @@ for (let i=1; i<=9; i++){
 }
 
 const fields = document.getElementsByClassName("field");
-newGame(arr,sortFields(fields),0);
+/* array = generated numbers
+0 = super easy difficulty by default
+*/
+newGame(array,sortFields(fields),0);
