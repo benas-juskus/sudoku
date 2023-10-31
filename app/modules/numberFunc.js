@@ -13,9 +13,9 @@ function hideFields(fields, difficulty) {
     let random = Math.random();
     if (difficulty == 0) {
         hiddenCount = 3;
-    } else if (difficulty == 1) {
+    } else if (difficulty == "easy") {
         hiddenCount = 25;
-    } else if (difficulty == 2) {
+    } else if (difficulty == "medium") {
         hiddenCount = 40;
     } else {
         hiddenCount = 55;
@@ -66,6 +66,23 @@ function addNumberEvents(array, fields) {
             }
         });
     }
+    menuEvents(array,fields,document.getElementsByClassName("dificulty_level"));
+}
+    // Event listeners for difficulty buttons & start
+let difficulty = 0; // Remember which difficulty was selected.
+function menuEvents(array,fields,menu){
+menu[0].addEventListener("click", ()=>{
+    difficulty = "easy";
+});
+menu[1].addEventListener("click", ()=>{
+    difficulty = "normal";
+});
+menu[2].addEventListener("click", ()=>{
+    difficulty = "hard";
+});
+menu[3].addEventListener("click", ()=>{
+    newGame(array,sortFields(fields),difficulty);
+});
 }
 function mistake(element, fields, storedNums) {
     let index = 0;

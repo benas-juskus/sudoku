@@ -15,8 +15,6 @@ for (let i=1; i<=9; i++){
         arr.push(i);
     }
 }
-newGame(arr,sortFields(fields),0);
 
-//New Game Button Event
-const newGameButton = document.getElementsByClassName("new-game")[0];
-newGameButton.addEventListener("click", ()=>newGame(arr,sortFields(fields),2));
+const fields = document.getElementsByClassName("field");
+newGame(arr,sortFields(fields),0);
