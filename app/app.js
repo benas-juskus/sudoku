@@ -12,14 +12,6 @@ for(let f = 0; f < field.length;f++){
     field[f].addEventListener("click", () => field[f].className += " active")
 }
 
-// Temporary arr
-let arr = [];
-for (let i = 1; i<=9; i++){
-    for (let i = 1; i<=9; i++){
-        arr.push(i)
-    }
-}
-
 newGame(arr,fields,0);
 
 //New Game Button Event
