@@ -75,7 +75,7 @@ menu[0].addEventListener("click", ()=>{
     difficulty = "easy";
 });
 menu[1].addEventListener("click", ()=>{
-    difficulty = "normal";
+    difficulty = "medium";
 });
 menu[2].addEventListener("click", ()=>{
     difficulty = "hard";
