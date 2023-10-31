@@ -1,4 +1,3 @@
-// import {grid, numPad, activeFieldCheck, startNewGamePanel, markActive} from "./modules/grid.js";
 import * as generateTable from "./modules/grid.js";
 
 document.getElementById("game-grid").innerHTML = generateTable.grid(); //generates game grid
