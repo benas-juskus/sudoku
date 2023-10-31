@@ -9,7 +9,6 @@ function grid() {
         }
         grid_square += `</div>`;
     }
-    console.log(grid_square)
     return grid_square;
 }
 function activeFieldCheck(){
