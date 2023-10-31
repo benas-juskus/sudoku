@@ -51,7 +51,6 @@ function addNumberEvents(array, fields) {
             selectedField.innerHTML = event.key;
             if (mistake(selectedField,fields,array)){
                 selectedField.classList.add("mistake");
-                // This is where mistake display function should go
             } else{
                 selectedField.classList.add("completed");
                 selectedField.classList.remove("mistake");
@@ -68,7 +67,6 @@ function addNumberEvents(array, fields) {
                 selectedField.innerHTML = `${i + 1}`;
                 if (mistake(selectedField,fields,array)){
                     selectedField.classList.add("mistake");
-                    // This is where mistake display function should go
                 } else{
                     selectedField.classList.add("completed");
                     selectedField.classList.remove("mistake");
@@ -87,6 +85,7 @@ function mistake(element, fields, storedNums) {
         index++;
     }
     if (storedNums[index] != element.innerHTML){
+        // Mistake counter should go up here
        return true;
     }
 }
