@@ -90,6 +90,40 @@ function mistake(element, fields, storedNums) {
        return true;
     }
 }
+// Sorts fields so that numbers are laid out row by row rather than square by square
+function sortFields(fields){
+    let ar1 = [];
+    let ar2 = [];
+    let ar3 = [];
+    let final = [];
+    let index = 1;
+    let sqCol = 1;
+    for (let e of fields){
+        if (index <= 3){
+            ar1.push(e);
+        } else if (index >3 && index <=6){
+            ar2.push(e);
+        } else {
+            ar3.push(e);
+        }
+        index++;
+        if (index > 9){
+            index = 1;
+            sqCol++;
+            console.log(true)
+        }
+        if (sqCol > 3){
+            sqCol = 1;
+            final.push(ar1);
+            final.push(ar2);
+            final.push(ar3);
+            ar1=[];
+            ar2=[];
+            ar3=[];
+        }        
+    }
+    return final.flat(1);
+}
 // Regenerates table
 function newGame(array, fields, difficulty) {
     fillTable(array, fields);
@@ -98,4 +132,4 @@ function newGame(array, fields, difficulty) {
 }
 
 let selectedField;
-export { addNumberEvents, fillTable, hideFields, newGame };
+export { sortFields, newGame };
