@@ -21,13 +21,13 @@ function numPad(){
     return num_pad
 }
 
-function startNewGamePanel(){
+function startNewGamePanel(){// function generates start new game panel with dificulty pickers
     let panel = ""
     panel += `<div class="start_game_panel">`;
     panel += `<p>Choose Dificulty Level:</p>`;
-    panel += `<div class="dificulty_level" id="easy">Easy</div>`;
-    panel += `<div class="dificulty_level" id="medium">Medium</div>`;
-    panel += `<div class="dificulty_level" id="hard">Hard</div>`;
+    panel += `<div class="dificulty_level" id="easy" tabindex="1">Easy</div>`;
+    panel += `<div class="dificulty_level" id="medium" tabindex="2">Medium</div>`;
+    panel += `<div class="dificulty_level" id="hard" tabindex="3">Hard</div>`;
     panel += `<div class="dificulty_level" id="start_game">Start Game</div>`;
     panel += `<div class="dificulty_level" id="start_game_cancel">Cancel</div>`;
     panel += `</div>`;
@@ -41,15 +41,25 @@ function markActive(){  //marks the active field (the one user clicked on)
     let field = document.getElementsByClassName("field");
     for(let f = 0; f < field.length;f++){
         field[f].addEventListener("click", activeFieldCheck)
-        field[f].addEventListener("click", () => field[f].classList.add("active"));
+        field[f].addEventListener("click", () => field[f].classList.add("active"));// adds class to the element
     }
 }
- function openStartPanel(){
+ function openStartPanel(){// when "New game" button is pressed opens a star new game panel 
     document.getElementsByClassName("new-game")[0].addEventListener("click", function(){
-    document.getElementById("start_new").style.visibility = "visible"
+    document.getElementById("start_new").style.visibility = "visible" // makes element visable
+    });
+ }
+ function startGame(){ // closes start new game panel (reserved to  "start game" for future) 
+    document.getElementById("start_game").addEventListener("click", function(){
+    document.getElementById("start_new").style.visibility = "hidden"
+    });
+ }
+ function cancelStartGame(){// closes start new game panel
+    document.getElementById("start_game_cancel").addEventListener("click", function(){
+    document.getElementById("start_new").style.visibility = "hidden"
     });
  }
 
 
 
-export {grid, numPad, activeFieldCheck, startNewGamePanel, markActive, openStartPanel};
+export {grid, numPad, activeFieldCheck, startNewGamePanel, markActive, openStartPanel, startGame, cancelStartGame};

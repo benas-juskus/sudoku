@@ -20,7 +20,6 @@
     background-color: rgb(37, 47, 58, 0.5);
     position: absolute;
     visibility: hidden;
-    /* visibility:visible; */
 }
 .start_game_panel{
     width: fit-content;
@@ -48,9 +47,11 @@
     padding: 0.5rem;
     cursor: pointer;
     font-weight: 500;
-
 }
 .dificulty_level:hover{
+    background-color:#758fae;
+}
+.dificulty_level:focus{
     background-color:#758fae;
 }
 #start_game{
