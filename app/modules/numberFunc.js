@@ -38,7 +38,10 @@ function addNumberEvents(array, fields) {
     for (let e of fields) {
         e.classList.remove("completed");
         e.addEventListener("click", function () {
-            if (e.classList.contains("mistake") || (e.innerHTML == "" && !e.classList.contains("completed"))) {
+            if (
+                e.classList.contains("mistake") ||
+                (e.innerHTML == "" && !e.classList.contains("completed"))
+            ) {
                 selectedField = e;
             } else {
                 selectedField = "";
@@ -49,13 +52,7 @@ function addNumberEvents(array, fields) {
     document.addEventListener("keydown", (event) => {
         if (selectedField && /[1-9]/.test(event.key)) {
             selectedField.innerHTML = event.key;
-            if (mistake(selectedField,fields,array)){
-                selectedField.classList.add("mistake");
-            } else{
-                selectedField.classList.add("completed");
-                selectedField.classList.remove("mistake");
-                selectedField = "";
-            }
+            mistake(selectedField, fields, array);
         }
     });
     // Numpad Events
@@ -65,61 +62,61 @@ function addNumberEvents(array, fields) {
         numPad[i].addEventListener("click", function () {
             if (selectedField) {
                 selectedField.innerHTML = `${i + 1}`;
-                if (mistake(selectedField,fields,array)){
-                    selectedField.classList.add("mistake");
-                } else{
-                    selectedField.classList.add("completed");
-                    selectedField.classList.remove("mistake");
-                    selectedField = "";
-                }
+                mistake(selectedField, fields, array);
             }
         });
     }
 }
 function mistake(element, fields, storedNums) {
     let index = 0;
-    for (let e of fields){
-        if (e == element){
+    for (let e of fields) {
+        if (e == element) {
             break;
         }
         index++;
     }
-    if (storedNums[index] != element.innerHTML){
+    if (storedNums[index] != element.innerHTML) {
         // Mistake counter should go up here
-       return true;
+
+        //if mistake, adds "mistake" class that will allow editing it if clicked away from field
+        element.classList.add("mistake");
+    } else {
+        //if entered num isn't a mistake, adds "completed" class which prevents editing field.
+        element.classList.add("completed");
+        element.classList.remove("mistake");
+        selectedField = "";
     }
 }
 // Sorts fields so that numbers are laid out row by row rather than square by square
-function sortFields(fields){
+function sortFields(fields) {
     let ar1 = [];
     let ar2 = [];
     let ar3 = [];
     let final = [];
     let index = 1;
     let sqCol = 1;
-    for (let e of fields){
-        if (index <= 3){
+    for (let e of fields) {
+        if (index <= 3) {
             ar1.push(e);
-        } else if (index >3 && index <=6){
+        } else if (index > 3 && index <= 6) {
             ar2.push(e);
         } else {
             ar3.push(e);
         }
         index++;
-        if (index > 9){
+        if (index > 9) {
             index = 1;
             sqCol++;
-            console.log(true)
         }
-        if (sqCol > 3){
+        if (sqCol > 3) {
             sqCol = 1;
             final.push(ar1);
             final.push(ar2);
             final.push(ar3);
-            ar1=[];
-            ar2=[];
-            ar3=[];
-        }        
+            ar1 = [];
+            ar2 = [];
+            ar3 = [];
+        }
     }
     return final.flat(1);
 }
