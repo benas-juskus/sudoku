@@ -16,9 +16,9 @@ function hideFields(fields, difficulty) {
     } else if (difficulty == 1) {
         hiddenCount = 25;
     } else if (difficulty == 2) {
-        hiddenCount = 30;
+        hiddenCount = 40;
     } else {
-        hiddenCount = 35;
+        hiddenCount = 55;
     }
     while (hiddenCount != 0) {
         for (let e of fields) {

@@ -22,4 +22,4 @@ newGame(arr,sortFields(fields),0);
 
 //New Game Button Event
 const newGameButton = document.getElementsByClassName("new-game")[0];
-newGameButton.addEventListener("click", ()=>newGame(arr,sortFields(fields),0));
+newGameButton.addEventListener("click", ()=>newGame(arr,sortFields(fields),2));
