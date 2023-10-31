@@ -66,7 +66,7 @@ function addNumberEvents(array, fields) {
             }
         });
     }
-    menuEvents(array,sortFields(fields),document.getElementsByClassName("dificulty_level"));
+    menuEvents(array,fields,document.getElementsByClassName("dificulty_level"));
 }
     // Event listeners for difficulty buttons & start
 let difficulty = 0; // Remember which difficulty was selected.
@@ -81,7 +81,7 @@ menu[2].addEventListener("click", ()=>{
     difficulty = "hard";
 });
 menu[3].addEventListener("click", ()=>{
-    newGame(array,sortFields(fields),difficulty);
+    newGame(array,fields,difficulty);
 });
 }
 function mistake(element, fields, storedNums) {

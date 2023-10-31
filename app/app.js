@@ -12,7 +12,7 @@ generateTable.cancelStartGame();// closes start new game panel
 let array = [];
 for (let i=1; i<=9; i++){
     for (let i = 1; i<=9; i++){
-        arr.push(i);
+        array.push(i);
     }
 }
 
