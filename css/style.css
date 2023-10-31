@@ -98,3 +98,6 @@
 .active{
     background-color: #dee5ed;
 }
+.mistake{
+    background-color: rgba(255, 155, 155, 0.742);
+}
