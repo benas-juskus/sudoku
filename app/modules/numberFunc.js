@@ -141,8 +141,12 @@ function sortFields(fields) {
 function newGame(array, fields, difficulty) {
     fillTable(array, fields);
     hideFields(fields, difficulty);
-    addNumberEvents(array, fields);
+    if (!added){
+        addNumberEvents(array, fields);
+        added=1;
+    }
 }
-
+// Have number events been added?
+let added = 0;
 let selectedField;
 export { sortFields, newGame };
