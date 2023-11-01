@@ -9,13 +9,6 @@ generateTable.openStartPanel(); // opens start new game panel
 generateTable.markActive();// marks clicked field
 generateTable.startGame(); 
 generateTable.cancelStartGame();// closes start new game panel
-//example arr
-let array = [];
-for (let i=1; i<=9; i++){
-    for (let i = 1; i<=9; i++){
-        array.push(i);
-    }
-}
 
 const fields = document.getElementsByClassName("field");
 /* array = generated numbers
