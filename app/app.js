@@ -1,5 +1,5 @@
 import * as generateTable from "./modules/grid.js";
-import { generateRandomNumber, generateRow, generateAllRows } from "./modules/puzzle.js";
+import {generatePuzzle} from "./modules/puzzle.js";
 import {newGame,sortFields} from "./modules/numberFunc.js";
 
 document.getElementById("game-grid").innerHTML = generateTable.grid(); //generates game grid
@@ -21,4 +21,4 @@ const fields = document.getElementsByClassName("field");
 /* array = generated numbers
 0 = super easy difficulty by default
 */
-newGame(array,sortFields(fields),0);
+newGame(generatePuzzle(),sortFields(fields),0);
