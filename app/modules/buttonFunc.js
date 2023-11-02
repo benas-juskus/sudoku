@@ -13,6 +13,7 @@ function startGame(){ // closes start new game panel (reserved to  "start game" 
    visibilityChange("winner_new_game", "winner", "hidden");
    visibilityChange("start_new_game", "game_over", "hidden");
    visibilityChange("winner_new_game", "start_new", "visible");
+   visibilityChange("start_new_game", "start_new", "visible");
 };
 function cancelStartGame(){// closes start new game panel, game over panel,
    visibilityChange("start_game_cancel", "start_new", "hidden");
