@@ -83,10 +83,10 @@ function startNewGamePanel(){// function generates start new game panel with dif
     panel += `<div class="dificulty_level" id="medium" tabindex="2">Medium</div>`;
     panel += `<div class="dificulty_level" id="hard" tabindex="3">Hard</div>`;
     panel += `<div class="dificulty_level" id="start_game">Start Game</div>`;
-    panel += `<div class="cancel" id="start_game_cancel">X</div>`;
+    panel += `<div class="cancel" id="start_game_cancel">${svg}</div>`;
     panel += `</div>`;
     return panel;    
 }
-// let svg = `<svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg>`
+let svg = `<svg width="12px" height="12px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style> </defs> <title></title> <g id="cross"> <line class="cls-1" x1="7" x2="25" y1="7" y2="25"></line> <line class="cls-1" x1="7" x2="25" y1="25" y2="7"></line> </g> </g></svg>`
 
 export {grid, numPad, startNewGamePanel, lineNumber, colNumber, lNumber, cNumber};
