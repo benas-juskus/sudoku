@@ -67,6 +67,9 @@ function addNumberEvents(array, fields) {
             }
         });
     }
+    // eraser button even
+    const eraserButton = document.getElementsByClassName("control-pad")[0];
+    eraserButton.addEventListener("click",()=>eraser())
     menuEvents(
         array,
         fields,
