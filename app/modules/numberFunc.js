@@ -76,16 +76,13 @@ function addNumberEvents(array, fields) {
 let difficulty = 0; // Remember which difficulty was selected.
 function menuEvents(array, fields, menu) {
     menu[0].addEventListener("click", () => {
-        newGame(array, fields, 1);
+        newGame(storedFunction, fields, 1);
     });
     menu[1].addEventListener("click", () => {
-        newGame(array, fields, 2);
+        newGame(storedFunction, fields, 2);
     });
     menu[2].addEventListener("click", () => {
-        newGame(array, fields, 3);
-    });
-    menu[3].addEventListener("click", () => {
-        newGame(array, fields, difficulty);
+        newGame(storedFunction, fields, 3);
     });
 }
 function mistake(element, fields, storedNums) {
