@@ -20,5 +20,6 @@ buttonFunction.dificultyClosePanel();// closes start new game panel
 const fields = document.getElementsByClassName("field");
 /* array = generated numbers
 0 = super easy difficulty by default
+1 = 25hidden, 2 = 40hidden , 3 = 55hidden
 */
 newGame(generatePuzzle,sortFields(fields),0);

@@ -73,8 +73,6 @@ function addNumberEvents(array, fields) {
         document.getElementsByClassName("dificulty_level")
     );
 }
-// Event listeners for difficulty buttons & start
-let difficulty = 0; // Remember which difficulty was selected.
 function menuEvents(array, fields, menu) {
     menu[0].addEventListener("click", () => {
         newGame(storedFunction, fields, 1);
@@ -100,11 +98,11 @@ function mistake(element, fields, storedNums) {
         // Mistake counter
         if (mistakeCount < maxMistakes-1){
             mistakeCount++;
-            console.log(mistakeCount);
+            document.getElementById("mistake_counter").innerHTML = mistakeCount;
         } else {
             // Loss screen
-            alert("lost :("); //Replace with appropriate function
-            newGame(storedFunction, fields, storedDifficulty);
+            document.getElementById("mistake_counter").innerHTML = ++mistakeCount;
+            game_over.style.visibility = "visible";
         }
     } else {
         //if entered num isn't a mistake, adds "completed" class which prevents editing field.
@@ -117,8 +115,7 @@ function mistake(element, fields, storedNums) {
             if (e.innerHTML == "") finished = false;
         }
         if (finished) {
-            alert("won :)");  //Replace with appropriate function
-            newGame(storedFunction,fields,storedDifficulty);
+            winner.style.visibility = "visible";
         }
     }
 }
@@ -166,8 +163,8 @@ function eraser(){
 }
 // Regenerates table
 function newGame(array, fields, difficulty) {
-    storedDifficulty = difficulty;
     mistakeCount = 0;
+    document.getElementById("mistake_counter").innerHTML = 0;
     selectedField = "";
     for (let e of fields) {
         e.classList.remove("completed");
@@ -186,8 +183,8 @@ function newGame(array, fields, difficulty) {
 // Have number events been added?
 let added = 0;
 
-let storedDifficulty = 0;
 let maxMistakes = 5;
+mistake_allowance.innerHTML = maxMistakes;
 let mistakeCount = 0;
 let storedFunction = undefined;
 let storedArray = [];
