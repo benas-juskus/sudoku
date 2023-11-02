@@ -36,7 +36,6 @@ function hideFields(fields, difficulty) {
 /* Click & keyboard events.*/
 function addNumberEvents(array, fields) {
     for (let e of fields) {
-        e.classList.remove("completed");
         e.addEventListener("click", function () {
             if (
                 e.classList.contains("mistake") ||
@@ -52,7 +51,7 @@ function addNumberEvents(array, fields) {
     document.addEventListener("keydown", (event) => {
         if (selectedField && /[1-9]/.test(event.key)) {
             selectedField.innerHTML = event.key;
-            mistake(selectedField, fields, array);
+            mistake(selectedField, fields, storedArray);
         }
     });
     // Numpad Events
@@ -62,7 +61,7 @@ function addNumberEvents(array, fields) {
         numPad[i].addEventListener("click", function () {
             if (selectedField) {
                 selectedField.innerHTML = `${i + 1}`;
-                mistake(selectedField, fields, array);
+                mistake(selectedField, fields, storedArray);
             }
         });
     }
@@ -94,15 +93,31 @@ function mistake(element, fields, storedNums) {
         index++;
     }
     if (storedNums[index] != element.innerHTML) {
-        // Mistake counter should go up here
-
         //if mistake, adds "mistake" class that will allow editing it if clicked away from field
         element.classList.add("mistake");
+        // Mistake counter
+        if (mistakeCount < maxMistakes-1){
+            mistakeCount++;
+            console.log(mistakeCount);
+        } else {
+            // Loss screen
+            alert("lost :("); //Replace with appropriate function
+            newGame(storedFunction, fields, 1)
+        }
     } else {
         //if entered num isn't a mistake, adds "completed" class which prevents editing field.
         element.classList.add("completed");
         element.classList.remove("mistake");
         selectedField = "";
+        // Win screen
+        let finished = true;
+        for (let e of fields){
+            if (e.innerHTML == "") finished = false;
+        }
+        if (finished) {
+            alert("won :)");  //Replace with appropriate function
+            newGame(storedFunction,fields,1);
+        }
     }
 }
 // Sorts fields so that numbers are laid out row by row rather than square by square
@@ -140,6 +155,12 @@ function sortFields(fields) {
 }
 // Regenerates table
 function newGame(array, fields, difficulty) {
+    mistakeCount = 0;
+    selectedField = "";
+    for (let e of fields) {
+        e.classList.remove("completed");
+        e.classList.remove("mistake");
+    }
     if (!storedFunction) storedFunction = array;
     storedArray = storedFunction();
     fillTable(storedArray, fields);
@@ -149,9 +170,13 @@ function newGame(array, fields, difficulty) {
         added = 1;
     }
 }
+
 // Have number events been added?
+let added = 0;
+
+let maxMistakes = 5;
+let mistakeCount = 0;
 let storedFunction = undefined;
 let storedArray = [];
-let added = 0;
 let selectedField;
 export { sortFields, newGame };
