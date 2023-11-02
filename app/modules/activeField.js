@@ -22,10 +22,10 @@ function markActive(){  // to mark active field and zone ( line column and squar
             for(let c = 0; c < fld_c_class.length; c++){
                 fld_c_class[c].classList.add("active_zone")
             }
-            //----------------------------------------------------------------------
         });
     }
 }
+//----------------------------------------------------------------------
 
 function activeFieldCheck(){// chacks if clicked field has class "active". If found, removes it 
     let active_field = document.getElementsByClassName("active");
