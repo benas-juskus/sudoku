@@ -14,4 +14,4 @@ const fields = document.getElementsByClassName("field");
 /* array = generated numbers
 0 = super easy difficulty by default
 */
-newGame(generatePuzzle(),sortFields(fields),0);
+newGame(generatePuzzle,sortFields(fields),0);
