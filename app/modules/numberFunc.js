@@ -179,7 +179,6 @@ function newGame(array, fields, difficulty) {
         e.classList.remove("mistake");
         // Make active field selectedField
         if (e.classList.contains("active") && e.innerHTML == ""){
-                alert(true)
                 selectedField = e;
             }
     }
