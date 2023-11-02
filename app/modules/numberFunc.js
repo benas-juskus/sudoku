@@ -13,9 +13,9 @@ function hideFields(fields, difficulty) {
     let random = Math.random();
     if (difficulty == 0) {
         hiddenCount = 3;
-    } else if (difficulty == "easy") {
+    } else if (difficulty == 1) {
         hiddenCount = 25;
-    } else if (difficulty == "medium") {
+    } else if (difficulty == 2) {
         hiddenCount = 40;
     } else {
         hiddenCount = 55;
@@ -66,23 +66,27 @@ function addNumberEvents(array, fields) {
             }
         });
     }
-    menuEvents(array,fields,document.getElementsByClassName("dificulty_level"));
+    menuEvents(
+        array,
+        fields,
+        document.getElementsByClassName("dificulty_level")
+    );
 }
-    // Event listeners for difficulty buttons & start
+// Event listeners for difficulty buttons & start
 let difficulty = 0; // Remember which difficulty was selected.
-function menuEvents(array,fields,menu){
-menu[0].addEventListener("click", ()=>{
-    difficulty = "easy";
-});
-menu[1].addEventListener("click", ()=>{
-    difficulty = "medium";
-});
-menu[2].addEventListener("click", ()=>{
-    difficulty = "hard";
-});
-menu[3].addEventListener("click", ()=>{
-    newGame(array,fields,difficulty);
-});
+function menuEvents(array, fields, menu) {
+    menu[0].addEventListener("click", () => {
+        newGame(array, fields, 1);
+    });
+    menu[1].addEventListener("click", () => {
+        newGame(array, fields, 2);
+    });
+    menu[2].addEventListener("click", () => {
+        newGame(array, fields, 3);
+    });
+    menu[3].addEventListener("click", () => {
+        newGame(array, fields, difficulty);
+    });
 }
 function mistake(element, fields, storedNums) {
     let index = 0;
@@ -141,9 +145,9 @@ function sortFields(fields) {
 function newGame(array, fields, difficulty) {
     fillTable(array, fields);
     hideFields(fields, difficulty);
-    if (!added){
+    if (!added) {
         addNumberEvents(array, fields);
-        added=1;
+        added = 1;
     }
 }
 // Have number events been added?
