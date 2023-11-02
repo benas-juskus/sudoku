@@ -1,5 +1,6 @@
 import {markActive} from "./modules/activeField.js";
 import * as generateTable from "./modules/grid.js";
+import {generatePuzzle} from "./modules/puzzle.js";
 import * as buttonFunction from "./modules/buttonFunc.js";
 import {newGame,sortFields} from "./modules/numberFunc.js";
 
@@ -12,16 +13,9 @@ markActive();// marks clicked field
 buttonFunction.openStartPanel(); // opens start new game panel
 buttonFunction.startGame(); 
 buttonFunction.cancelStartGame();// closes start new game panel
-//example arr
-let array = [];
-for (let i=1; i<=9; i++){
-    for (let i = 1; i<=9; i++){
-        array.push(i);
-    }
-}
 
 const fields = document.getElementsByClassName("field");
 /* array = generated numbers
 0 = super easy difficulty by default
 */
-newGame(array,sortFields(fields),0);
+newGame(generatePuzzle(),sortFields(fields),0);
