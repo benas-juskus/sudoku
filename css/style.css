@@ -8,9 +8,9 @@
 }
 .wrapper {
     width: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    /* grid-auto-flow: column; */
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     gap: 1rem;
     position: relative;
     padding: 20px;
@@ -22,7 +22,7 @@
     height: 100%;
     background-color: rgb(37, 47, 58, 0.5);
     position: absolute;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 .start_game_panel,.game_over_panel, .winner_panel{
     width: fit-content;
@@ -211,12 +211,13 @@
 
 /* ----------------------------------GAME STATS------------------------------------- */
 .game-stats{
-    width:620px;
+    /* width:620px; */
     height: 30px;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: -0.8rem;
+    grid-column: 1/3;
 }
 .mistakes{
     display: flex;
