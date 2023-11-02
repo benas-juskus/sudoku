@@ -52,6 +52,8 @@ function addNumberEvents(array, fields) {
         if (selectedField && /[1-9]/.test(event.key)) {
             selectedField.innerHTML = event.key;
             mistake(selectedField, fields, storedArray);
+        } else if (event.key == "Backspace"){
+            eraser();
         }
     });
     // Numpad Events
@@ -152,6 +154,15 @@ function sortFields(fields) {
         }
     }
     return final.flat(1);
+}
+// Eraser.....
+function eraser(){
+    if (selectedField != ""){
+        if (selectedField.classList.contains("mistake")){
+            selectedField.innerHTML = "";
+            selectedField.classList.remove("mistake");
+        }
+    }
 }
 // Regenerates table
 function newGame(array, fields, difficulty) {
