@@ -145,7 +145,7 @@ function newGame(array, fields, difficulty) {
     fillTable(storedArray, fields);
     hideFields(fields, difficulty);
     if (!added) {
-        addNumberEvents(array, fields);
+        addNumberEvents(storedArray, fields);
         added = 1;
     }
 }
