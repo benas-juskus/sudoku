@@ -143,7 +143,9 @@ function sortFields(fields) {
 }
 // Regenerates table
 function newGame(array, fields, difficulty) {
-    fillTable(array, fields);
+    if (!storedFunction) storedFunction = array;
+    storedArray = storedFunction();
+    fillTable(storedArray, fields);
     hideFields(fields, difficulty);
     if (!added) {
         addNumberEvents(array, fields);
@@ -151,6 +153,8 @@ function newGame(array, fields, difficulty) {
     }
 }
 // Have number events been added?
+let storedFunction = undefined;
+let storedArray = [];
 let added = 0;
 let selectedField;
 export { sortFields, newGame };
