@@ -102,6 +102,7 @@ function mistake(element, fields, storedNums) {
         } else {
             // Loss screen
             document.getElementById("mistake_counter").innerHTML = ++mistakeCount;
+            selectedField = "";
             game_over.style.visibility = "visible";
         }
     } else {
@@ -166,14 +167,19 @@ function newGame(array, fields, difficulty) {
     mistakeCount = 0;
     document.getElementById("mistake_counter").innerHTML = 0;
     selectedField = "";
-    for (let e of fields) {
-        e.classList.remove("completed");
-        e.classList.remove("mistake");
-    }
     if (!storedFunction) storedFunction = array;
     storedArray = storedFunction();
     fillTable(storedArray, fields);
     hideFields(fields, difficulty);
+    for (let e of fields) {
+        e.classList.remove("completed");
+        e.classList.remove("mistake");
+        // Make active field selectedField
+        if (e.classList.contains("active") && e.innerHTML == ""){
+                alert(true)
+                selectedField = e;
+            }
+    }
     if (!added) {
         addNumberEvents(storedArray, fields);
         added = 1;
