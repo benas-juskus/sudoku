@@ -73,20 +73,47 @@ function cNumber(arr, a, b, c){
         }
     }        
 }
-//----------------------------------------------------------
+//-----------------------------FUNCTION TO GENERATE  START NEW GAME PANNEL-----------------------------
+
+let svg = `<svg width="12px" height="12px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style> </defs> <title></title> <g id="cross"> <line class="cls-1" x1="7" x2="25" y1="7" y2="25"></line> <line class="cls-1" x1="7" x2="25" y1="25" y2="7"></line> </g> </g></svg>`
 
 function startNewGamePanel(){// function generates start new game panel with dificulty pickers
     let panel = ""
     panel += `<div class="start_game_panel">`;
     panel += `<p>Choose Dificulty Level:</p>`;
-    panel += `<div class="dificulty_level" id="easy" tabindex="1">Easy</div>`;
-    panel += `<div class="dificulty_level" id="medium" tabindex="2">Medium</div>`;
-    panel += `<div class="dificulty_level" id="hard" tabindex="3">Hard</div>`;
-    panel += `<div class="dificulty_level" id="start_game">Start Game</div>`;
+    panel += `<div class="dificulty_level dif" id="easy" tabindex="1">Easy</div>`;
+    panel += `<div class="dificulty_level dif" id="medium" tabindex="2">Medium</div>`;
+    panel += `<div class="dificulty_level dif" id="hard" tabindex="3">Hard</div>`;
+    // panel += `<div class="dificulty_level" id="start_game">Start Game</div>`;
     panel += `<div class="cancel" id="start_game_cancel">${svg}</div>`;
     panel += `</div>`;
     return panel;    
 }
-let svg = `<svg width="12px" height="12px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style> </defs> <title></title> <g id="cross"> <line class="cls-1" x1="7" x2="25" y1="7" y2="25"></line> <line class="cls-1" x1="7" x2="25" y1="25" y2="7"></line> </g> </g></svg>`
 
-export {grid, numPad, startNewGamePanel, lineNumber, colNumber, lNumber, cNumber};
+//-----------------------------FUNCTION TO GENERATE GAME OVER PANNEL-----------------------------
+
+function gameOverPanel(){// function generates start new game panel with dificulty pickers
+    let panel = ""
+    panel += `<div class="game_over_panel">`;
+    panel += `<p>Game Over</p>`;
+    panel += `<div class="dificulty_level" id="start_new_game">Start New Game</div>`;
+    panel += `<div class="cancel" id="game_over_cancel">${svg}</div>`;
+    panel += `</div>`;
+    return panel;    
+}
+//-----------------------------FUNCTION TO GENERATE WINNER PANNEL-----------------------------
+
+function winnerPanel(){// function generates start new game panel with dificulty pickers
+    let panel = ""
+    panel += `<div class="winner_panel">`;
+    panel += `<p>You Win!</p>`;
+    panel += `<div class="dificulty_level" id="winner_new_game">Start New Game</div>`;
+    panel += `<div class="cancel" id="winner_cancel">${svg}</div>`;
+    panel += `</div>`;
+    return panel;    
+}
+
+
+//-----------------------------EXPORT-----------------------------
+
+export {grid, numPad, startNewGamePanel, lineNumber, colNumber, lNumber, cNumber, gameOverPanel, winnerPanel};
