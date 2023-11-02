@@ -104,7 +104,7 @@ function mistake(element, fields, storedNums) {
         } else {
             // Loss screen
             alert("lost :("); //Replace with appropriate function
-            newGame(storedFunction, fields, 1)
+            newGame(storedFunction, fields, storedDifficulty);
         }
     } else {
         //if entered num isn't a mistake, adds "completed" class which prevents editing field.
@@ -118,7 +118,7 @@ function mistake(element, fields, storedNums) {
         }
         if (finished) {
             alert("won :)");  //Replace with appropriate function
-            newGame(storedFunction,fields,1);
+            newGame(storedFunction,fields,storedDifficulty);
         }
     }
 }
@@ -166,6 +166,7 @@ function eraser(){
 }
 // Regenerates table
 function newGame(array, fields, difficulty) {
+    storedDifficulty = difficulty;
     mistakeCount = 0;
     selectedField = "";
     for (let e of fields) {
@@ -185,6 +186,7 @@ function newGame(array, fields, difficulty) {
 // Have number events been added?
 let added = 0;
 
+let storedDifficulty = 0;
 let maxMistakes = 5;
 let mistakeCount = 0;
 let storedFunction = undefined;
