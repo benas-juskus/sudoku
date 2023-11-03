@@ -166,7 +166,7 @@ function eraser(){
     }
 }
 // Regenerates table
-function newGame(array, fields, difficulty, sessionStatus) {
+function newGame(array, fields, difficulty) {
     mistakeCount = 0;
     document.getElementById("mistake_counter").innerHTML = 0;
     selectedField = "";
@@ -187,8 +187,6 @@ function newGame(array, fields, difficulty, sessionStatus) {
         added = 1;
     }
 
-    sessionStatus = true;
-    console.log(sessionStatus)
 }
 
 // Have number events been added?

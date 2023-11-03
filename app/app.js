@@ -25,10 +25,5 @@ const fields = document.getElementsByClassName("field");
 1 = 25hidden, 2 = 40hidden , 3 = 55hidden
 */
 
-let sessionActive = false;
-console.log(sessionActive);
-newGame(generatePuzzle,sortFields(fields),0, sessionActive);
-
-let timerElement = document.getElementById('timer_counter');
-timerCounter(timerElement);
-console.log(sessionActive)
+newGame(generatePuzzle,sortFields(fields),0);
+timerCounter();
