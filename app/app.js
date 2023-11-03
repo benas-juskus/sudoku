@@ -3,6 +3,8 @@ import * as generateTable from "./modules/grid.js";
 import {generatePuzzle} from "./modules/puzzle.js";
 import * as buttonFunction from "./modules/buttonFunc.js";
 import {newGame,sortFields} from "./modules/numberFunc.js";
+import {timerCounter} from "./modules/timer/timerCounter.js";
+
 
 document.getElementById("game-grid").innerHTML = generateTable.grid(); //generates game grid
 document.getElementById("num-pad").innerHTML = generateTable.numPad();// generates number pad
@@ -22,4 +24,11 @@ const fields = document.getElementsByClassName("field");
 0 = super easy difficulty by default
 1 = 25hidden, 2 = 40hidden , 3 = 55hidden
 */
-newGame(generatePuzzle,sortFields(fields),0);
+
+let sessionActive = false;
+console.log(sessionActive);
+newGame(generatePuzzle,sortFields(fields),0, sessionActive);
+
+let timerElement = document.getElementById('timer_counter');
+timerCounter(timerElement);
+console.log(sessionActive)
