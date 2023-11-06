@@ -1,3 +1,5 @@
+import {startTimer, resetTimer} from "./timer/timerCounter.js";
+
 /*fields = iterable collection of divs where fieldbers are placed
 (get via document.getElementsByClassName("class")*/
 function fillTable(generatedNumsArray, fields) {
@@ -186,6 +188,9 @@ function newGame(array, fields, difficulty) {
         addNumberEvents(storedArray, fields);
         added = 1;
     }
+
+    resetTimer();
+    startTimer();
 
 }
 

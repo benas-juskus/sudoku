@@ -3,7 +3,7 @@ import * as generateTable from "./modules/grid.js";
 import {generatePuzzle} from "./modules/puzzle.js";
 import * as buttonFunction from "./modules/buttonFunc.js";
 import {newGame,sortFields} from "./modules/numberFunc.js";
-import {timerCounter} from "./modules/timer/timerCounter.js";
+import * as timer from "./modules/timer/timerCounter.js";
 
 
 document.getElementById("game-grid").innerHTML = generateTable.grid(); //generates game grid
@@ -26,4 +26,3 @@ const fields = document.getElementsByClassName("field");
 */
 
 newGame(generatePuzzle,sortFields(fields),0);
-timerCounter();
