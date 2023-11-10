@@ -1,6 +1,5 @@
 import {markActive} from "./modules/activeField.js";
 import * as generateTable from "./modules/grid.js";
-import {generatePuzzle} from "./modules/puzzle.js";
 import * as buttonFunction from "./modules/buttonFunc.js";
 import {newGame,sortFields} from "./modules/numberFunc.js";
 
@@ -22,4 +21,4 @@ const fields = document.getElementsByClassName("field");
 0 = super easy difficulty by default
 1 = 25hidden, 2 = 40hidden , 3 = 55hidden
 */
-newGame(generatePuzzle,sortFields(fields),0);
+newGame(sortFields(fields),0);
