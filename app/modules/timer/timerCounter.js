@@ -28,7 +28,6 @@ function updateTimer() {
   // Display the timer value (you can update your HTML accordingly)
   const timerDisplay = document.getElementById('timer_counter');
   timerDisplay.textContent = formatTime(seconds);
-  // console.log(formatTime(seconds));
 }
 
 function formatTime(seconds) {

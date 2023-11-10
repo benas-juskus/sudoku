@@ -1,4 +1,4 @@
-import {startTimer, resetTimer} from "./timer/timerCounter.js";
+import {startTimer, resetTimer, pauseTimer} from "./timer/timerCounter.js";
 
 /*fields = iterable collection of divs where fieldbers are placed
 (get via document.getElementsByClassName("class")*/
@@ -109,6 +109,7 @@ function mistake(element, fields, storedNums) {
             document.getElementById("mistake_counter").innerHTML = ++mistakeCount;
             selectedField = "";
             game_over.style.visibility = "visible";
+            pauseTimer();
         }
     } else {
         //if entered num isn't a mistake, adds "completed" class which prevents editing field.
@@ -122,6 +123,7 @@ function mistake(element, fields, storedNums) {
         }
         if (finished) {
             winner.style.visibility = "visible";
+            pauseTimer();
         }
     }
 }
