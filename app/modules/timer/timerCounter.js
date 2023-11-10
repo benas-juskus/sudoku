@@ -3,8 +3,7 @@ let startTime = 0; // Variable to store the start time
 
 function startTimer() {
   if (!timerInterval) {
-    startTime = Date.now();
-    timerInterval = setInterval(updateTimer, 1000); // Update the timer every second
+    timerInterval = setInterval(updateTimer, 1000);
   }
 }
 
@@ -19,26 +18,35 @@ function resetTimer() {
   clearInterval(timerInterval);
   timerInterval = null;
   startTime = 0;
-  updateTimer(); // Reset the timer display
+  updateTimer();
 }
 
 function updateTimer() {
-  const currentTime = Date.now() - startTime;
-  const seconds = Math.floor(currentTime / 1000);
-  // Display the timer value (you can update your HTML accordingly)
-  const timerDisplay = document.getElementById('timer_counter');
+  let seconds = startTime;
+  let timerDisplay = document.getElementById('timer_counter');
   timerDisplay.textContent = formatTime(seconds);
+
+  startTime++;
 }
 
 function formatTime(seconds) {
 
-  if (seconds.toString().length > 9) {
-    seconds = 0;
-  }
-
-  const minutes = Math.floor(seconds / 60);
+  let minutes = Math.floor(seconds / 60);
   seconds = seconds % 60;
   return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
+
+let pauseStatus = false;
+let pauseBtn = document.getElementById('pause_btn');
+
+pauseBtn.addEventListener('click', () => {
+  if (!pauseStatus) {
+    pauseTimer();
+  } else {
+    startTimer();
+  }
+
+  pauseStatus = !pauseStatus;
+})
 
 export { startTimer, pauseTimer, resetTimer };
