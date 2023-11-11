@@ -214,8 +214,11 @@
 .active_zone{
     background-color: rgb(227, 233, 242);
 }
-.active{
-    background-color:  #acc5e2;
+.active_same{
+    background-color:  #c5dfdf;
+}
+.active_field{
+    background-color:  #90a4bd;
 }
 .mistake{
     background-color: rgba(255, 155, 155, 0.742);
