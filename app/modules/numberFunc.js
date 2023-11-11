@@ -2,6 +2,8 @@ import {startTimer, resetTimer, pauseTimer} from "./timer/timerFunc.js";
 
 /*fields = iterable collection of divs where fieldbers are placed
 (get via document.getElementsByClassName("class")*/
+import { generatePuzzle } from "./puzzle.js";
+
 function fillTable(generatedNumsArray, fields) {
     let index = 0;
     for (let e of fields) {
@@ -80,13 +82,13 @@ function addNumberEvents(array, fields) {
 }
 function menuEvents(array, fields, menu) {
     menu[0].addEventListener("click", () => {
-        newGame(storedFunction, fields, 1);
+        newGame(fields, 1);
     });
     menu[1].addEventListener("click", () => {
-        newGame(storedFunction, fields, 2);
+        newGame(fields, 2);
     });
     menu[2].addEventListener("click", () => {
-        newGame(storedFunction, fields, 3);
+        newGame(fields, 3);
     });
 }
 function mistake(element, fields, storedNums) {
@@ -170,12 +172,11 @@ function eraser(){
     }
 }
 // Regenerates table
-function newGame(array, fields, difficulty) {
+function newGame(fields, difficulty) {
     mistakeCount = 0;
     document.getElementById("mistake_counter").innerHTML = 0;
     selectedField = "";
-    if (!storedFunction) storedFunction = array;
-    storedArray = storedFunction();
+    storedArray = generatePuzzle();
     fillTable(storedArray, fields);
     hideFields(fields, difficulty);
     for (let e of fields) {
@@ -202,7 +203,6 @@ let added = 0;
 let maxMistakes = 5;
 mistake_allowance.innerHTML = maxMistakes;
 let mistakeCount = 0;
-let storedFunction = undefined;
 let storedArray = [];
 let selectedField;
 export { sortFields, newGame };
