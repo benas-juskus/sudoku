@@ -11,7 +11,6 @@ document.getElementById("game_over").innerHTML = generateTable. gameOverPanel();
 document.getElementById("winner").innerHTML = generateTable. winnerPanel();// generates (originaly unvisable) start new game panel
 generateTable.lineNumber();// adds line number class to field
 generateTable.colNumber();// adds col number class to field
-markActive();// marks clicked field
 buttonFunction.openStartPanel(); // opens start new game panel
 buttonFunction.startGame(); 
 buttonFunction.cancelStartGame();// closes start new game panel
@@ -23,4 +22,5 @@ const fields = document.getElementsByClassName("field");
 1 = 25hidden, 2 = 40hidden , 3 = 55hidden
 */
 newGame(sortFields(fields),0);
+markActive();// marks clicked field
 
