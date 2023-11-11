@@ -1,3 +1,8 @@
+
+/**
+ * generates game grid for numbers
+ * @returns HTML code
+ */
 function grid() {
     let grid_square = "";
     for (let k = 1; k < 10; k++) {// generates 9 squares..
