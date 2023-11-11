@@ -218,7 +218,7 @@
 
 /* ----------------------------------GAME STATS------------------------------------- */
 .game-stats{
-    /* width:620px; */
+    width: 360px;
     height: 30px;
     display: flex;
     align-items: baseline;
@@ -231,7 +231,19 @@
 }
 .timer{
     display: flex;
-    margin-right: 42%;
+    align-items: center;
+}
+#pause_btn {
+    background-color: #dee5ed;
+    border-radius: 50%;
+    border: none;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    padding-bottom: 2%;
+}
+#pause_btn:hover {
+    background-color:#b9bfc5;
 }
 
 

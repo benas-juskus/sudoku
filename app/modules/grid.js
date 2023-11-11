@@ -107,6 +107,7 @@ function winnerPanel(){// function generates start new game panel with dificulty
     let panel = ""
     panel += `<div class="winner_panel">`;
     panel += `<p>You Win!</p>`;
+    panel += `<p>Your time: <small id="result_time"></small></p>`;
     panel += `<div class="dificulty_level" id="winner_new_game">Start New Game</div>`;
     panel += `<div class="cancel" id="winner_cancel">${svg}</div>`;
     panel += `</div>`;

@@ -1,4 +1,4 @@
-import {startTimer, resetTimer, pauseTimer} from "./timer/timerCounter.js";
+import {startTimer, resetTimer, pauseTimer} from "./timer/timerFunc.js";
 
 /*fields = iterable collection of divs where fieldbers are placed
 (get via document.getElementsByClassName("class")*/
