@@ -9,6 +9,7 @@ function startTimer() {
   if (!timerInterval) {
     timerInterval = setInterval(updateTimer, 1000);
   }
+  console.log('Pause status on Start: ' + pauseStatus);
 }
 
 function pauseTimer() {
@@ -25,6 +26,8 @@ function resetTimer() {
   timerInterval = null;
   startTime = 0;
   updateTimer();
+  pauseStatus = false;
+  changeBoardVisibility();
 }
 
 function updateTimer() {
@@ -42,12 +45,14 @@ function formatTime(seconds) {
 
 
 pauseBtn.addEventListener('click', () => {
+  console.log('Pause status on click: ' + pauseStatus);
   if (!pauseStatus) {
     pauseTimer();
   } else {
     startTimer();
   }
   pauseStatus = !pauseStatus;
+  console.log('Pause status after click: ' + pauseStatus);
   changeBoardVisibility();
 });
 
@@ -70,4 +75,4 @@ function changeBoardVisibility() {
   }
 }
 
-export { startTimer, pauseTimer, resetTimer };
+export { startTimer, pauseTimer, resetTimer, pauseStatus };
