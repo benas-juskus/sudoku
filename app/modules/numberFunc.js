@@ -1,3 +1,5 @@
+import {startTimer, resetTimer, pauseTimer, pauseStatus} from "./timer/timerFunc.js";
+
 /*fields = iterable collection of divs where fieldbers are placed
 (get via document.getElementsByClassName("class")*/
 import { generatePuzzle } from "./puzzle.js";
@@ -51,7 +53,7 @@ function addNumberEvents(array, fields) {
     }
     // Keyboard events
     document.addEventListener("keydown", (event) => {
-        if (selectedField && /[1-9]/.test(event.key)) {
+        if (selectedField && /[1-9]/.test(event.key) && !pauseStatus) {
             selectedField.innerHTML = event.key;
             mistake(selectedField, fields, storedArray);
         } else if (event.key == "Backspace"){
@@ -63,7 +65,7 @@ function addNumberEvents(array, fields) {
     let index = 1;
     for (let i = 0; i < numPad.length; i++) {
         numPad[i].addEventListener("click", function () {
-            if (selectedField) {
+            if (selectedField && !pauseStatus) {
                 selectedField.innerHTML = `${i + 1}`;
                 mistake(selectedField, fields, storedArray);
             }
@@ -109,6 +111,7 @@ function mistake(element, fields, storedNums) {
             document.getElementById("mistake_counter").innerHTML = ++mistakeCount;
             selectedField = "";
             game_over.style.visibility = "visible";
+            pauseTimer();
         }
     } else {
         //if entered num isn't a mistake, adds "completed" class which prevents editing field.
@@ -122,6 +125,7 @@ function mistake(element, fields, storedNums) {
         }
         if (finished) {
             winner.style.visibility = "visible";
+            pauseTimer();
         }
     }
 }
@@ -161,7 +165,7 @@ function sortFields(fields) {
 // Eraser.....
 function eraser(){
     if (selectedField != ""){
-        if (selectedField.classList.contains("mistake")){
+        if (selectedField.classList.contains("mistake") && !pauseStatus){
             selectedField.innerHTML = "";
             selectedField.classList.remove("mistake");
         }
@@ -187,6 +191,10 @@ function newGame(fields, difficulty) {
         addNumberEvents(storedArray, fields);
         added = 1;
     }
+
+    resetTimer();
+    startTimer();
+
 }
 
 // Have number events been added?
