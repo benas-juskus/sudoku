@@ -247,6 +247,7 @@
     align-items: center;
 }
 #pause_btn {
+    font-family: 'Segoe UI Symbol';
     background-color: #dee5ed;
     border-radius: 50%;
     border: none;
@@ -267,9 +268,11 @@
     background-color: var(--dark);    
 }
 #game_paused {
+    color: #b9bfc5;
+    text-shadow: 1px 1px 3px var(--dark);   
     position: absolute;
-    font-size: 1em;
-    top: 51%;
-    left: 22.5%;
+    font-size: 3em;
+    top: 45%;
+    left: 7%;
     visibility: hidden;
 }
