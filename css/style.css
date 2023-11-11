@@ -247,6 +247,7 @@
     align-items: center;
 }
 #pause_btn {
+    font-family: 'Segoe UI Symbol';
     background-color: #dee5ed;
     border-radius: 50%;
     border: none;
