@@ -2,7 +2,6 @@ import {markActive} from "./modules/activeField.js";
 import * as generateTable from "./modules/grid.js";
 import * as buttonFunction from "./modules/buttonFunc.js";
 import {newGame,sortFields} from "./modules/numberFunc.js";
-import * as timer from "./modules/timer/timerFunc.js";
 
 
 document.getElementById("game-grid").innerHTML = generateTable.grid(); //generates game grid
@@ -24,3 +23,4 @@ const fields = document.getElementsByClassName("field");
 1 = 25hidden, 2 = 40hidden , 3 = 55hidden
 */
 newGame(sortFields(fields),0);
+

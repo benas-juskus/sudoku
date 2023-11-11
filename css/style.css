@@ -246,6 +246,19 @@
 #pause_btn:hover {
     background-color:#b9bfc5;
 }
-
-
+.paused {
+    background-color: var(--dark);
+    color: #b9bfc5;
+}
+.paused:hover {
+    cursor: default;
+    background-color: var(--dark);    
+}
+#game_paused {
+    position: absolute;
+    font-size: 1em;
+    top: 51%;
+    left: 22.5%;
+    visibility: hidden;
+}
 

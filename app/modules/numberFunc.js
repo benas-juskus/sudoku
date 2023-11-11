@@ -165,7 +165,7 @@ function sortFields(fields) {
 // Eraser.....
 function eraser(){
     if (selectedField != ""){
-        if (selectedField.classList.contains("mistake")){
+        if (selectedField.classList.contains("mistake") && !pauseStatus){
             selectedField.innerHTML = "";
             selectedField.classList.remove("mistake");
         }
