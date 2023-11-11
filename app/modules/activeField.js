@@ -71,4 +71,5 @@ function activeZoneCheck(){
  }
 
  export {markActive};
+ export {activeFieldCheck, activeSameCheck, activeZoneCheck};
 

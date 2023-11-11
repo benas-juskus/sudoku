@@ -30,6 +30,7 @@
     background-color: #f2f6fa;
     border-radius: 0.3rem;
     position: relative;
+    text-align: center;
     top: 50%;
     left:50%;
     transform: translate(-50%, -50%); 
@@ -226,12 +227,12 @@
 
 /* ----------------------------------GAME STATS------------------------------------- */
 .game-stats{
-    /* width:620px; */
+    width:360px;
     height: 22px;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-bottom: -0.8rem;
+    margin-bottom: -0.5rem;
     grid-column: 1/3;
 }
 .mistakes{
@@ -243,8 +244,32 @@
 }
 .timer{
     display: flex;
-    margin-right: 42%;
+    align-items: center;
 }
-
-
-
+#pause_btn {
+    background-color: #dee5ed;
+    border-radius: 50%;
+    border: none;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    padding-bottom: 2%;
+}
+#pause_btn:hover {
+    background-color:#b9bfc5;
+}
+.paused {
+    background-color: var(--dark);
+    color: #b9bfc5;
+}
+.paused:hover {
+    cursor: default;
+    background-color: var(--dark);    
+}
+#game_paused {
+    position: absolute;
+    font-size: 1em;
+    top: 51%;
+    left: 22.5%;
+    visibility: hidden;
+}

@@ -3,6 +3,7 @@ import * as generateTable from "./modules/grid.js";
 import * as buttonFunction from "./modules/buttonFunc.js";
 import {newGame,sortFields} from "./modules/numberFunc.js";
 
+
 document.getElementById("game-grid").innerHTML = generateTable.grid(); //generates game grid
 document.getElementById("num-pad").innerHTML = generateTable.numPad();// generates number pad
 document.getElementById("start_new").innerHTML = generateTable.startNewGamePanel();// generates (originaly unvisable) start new game panel
