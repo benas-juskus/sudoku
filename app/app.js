@@ -1,11 +1,11 @@
 import {markActive} from "./modules/activeField.js";
-import * as generateTable from "./modules/grid.js";
+import * as generateTable from "./modules/grid/grid.js";
 import * as buttonFunction from "./modules/buttonFunc.js";
 import {newGame,sortFields} from "./modules/numberFunc.js";
-
+import {numPad} from "./numpad/numpad.js"
 
 document.getElementById("game-grid").innerHTML = generateTable.grid(); //generates game grid
-document.getElementById("num-pad").innerHTML = generateTable.numPad();// generates number pad
+document.getElementById("num-pad").innerHTML = numPad();// generates number pad
 document.getElementById("start_new").innerHTML = generateTable.startNewGamePanel();// generates (originaly unvisable) start new game panel
 document.getElementById("game_over").innerHTML = generateTable. gameOverPanel();// generates (originaly unvisable) start new game panel
 document.getElementById("winner").innerHTML = generateTable. winnerPanel();// generates (originaly unvisable) start new game panel

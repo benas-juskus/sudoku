@@ -17,15 +17,6 @@ function grid() {
     return grid_square;
 }
 
-function numPad(){ //generates number pad on the side 
-    let num_pad = "";
-    for(let n = 1; n < 10; n++ ){
-        num_pad += `<div class="num-pad-item">`
-        num_pad += n
-        num_pad += `</div>`
-    } 
-    return num_pad
-}
 
 //---------------------------FUNCTIONS TO ADD LINE NUMBER CLASS TO FIELD---------------------------------
 function lineNumber(){
@@ -122,4 +113,4 @@ function winnerPanel(){// function generates start new game panel with dificulty
 
 //-----------------------------EXPORT-----------------------------
 
-export {grid, numPad, startNewGamePanel, lineNumber, colNumber, lNumber, cNumber, gameOverPanel, winnerPanel};
+export {grid, startNewGamePanel, lineNumber, colNumber, lNumber, cNumber, gameOverPanel, winnerPanel};
